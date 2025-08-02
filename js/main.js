@@ -93,13 +93,13 @@ function updatePoseDisplay(pose, confidence) {
     // Define colors for different poses
     const poseColors = {
         'Squat': '#FF4444',      // Red
-        'Lunges': '#44FF44',     // Green  
-        'Toe touch': '#4444FF',  // Blue
-        'Standing': '#FFFF44',   // Yellow
-        'Jumping': '#FF44FF',    // Magenta
+        'Lunge': '#44FF44',     // Green  
+        'T-Pose': '#4444FF',  // Blue
+        'Stand': '#FFFFFF',   // White
+       // 'Jumping': '#FF44FF',    // Magenta
         'Plank': '#44FFFF',      // Cyan
-        'Push-up': '#FF8844',    // Orange
-        'default': '#FFFFFF'     // White
+        //'Push-up': '#FF8844',    // Orange
+        //'default': '#FFFFFF'     // White
     };
     
     // Set color based on pose (case-insensitive)
