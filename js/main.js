@@ -57,6 +57,9 @@ console.log('Monster Fighter RPG Game - Layout Loaded');
 //     // Optimize for mobile devices
 // }
 
+// import the menu voice controller file
+import { VoiceCommandController } from './menu-voice-controller.js';
+
 // Event listeners for future implementation
 window.addEventListener('load', function() {
     console.log('Game layout ready for functionality implementation');
