@@ -7,7 +7,38 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="game-container">
+        <!-- Error Display -->
+        <div id="errorDisplay" style="position: fixed; top: 10px; right: 10px; background: red; color: white; padding: 10px; z-index: 9999; display: none; max-width: 300px;">
+            <strong>ERROR:</strong> <span id="errorMessage"></span>
+        </div>
+
+        <!-- Main Menu Overlay -->
+        <div id="mainMenu" class="main-menu-overlay">
+            <div class="menu-container">
+                <h1 class="menu-title">Battlefit</h1>
+                <div class="menu-buttons">
+                    <button id="startButton" class="menu-button start-button">
+                        <span class="button-text">START</span>
+                        <span class="button-hint">(or say "start")</span>
+                    </button>
+                    <button id="exitButton" class="menu-button exit-button">
+                        <span class="button-text">EXIT</span>
+                        <span class="button-hint">(or say "exit")</span>
+                    </button>
+                </div>
+                <div class="voice-status">
+                    <span id="voiceStatus" class="status-text">Voice commands ready</span>
+                </div>
+                <!-- Debug button for testing -->
+                <div style="margin-top: 10px;">
+                    <button onclick="testMenu()" style="background: #333; color: #fff; border: 1px solid #666; padding: 5px 10px; font-size: 12px;">
+                        Test Transition
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-container" id="gameContainer" style="display: none;">
             <!-- Title Banner -->
             <header class="title-banner">
                 <h1>Battlefit</h1>
@@ -49,6 +80,57 @@
 
         </div>
 
-        <script src="js/main.js"></script>
+        <!-- Fallback script for testing -->
+        <script>
+           
+            
+
+            // Test function
+            function testMenu() {
+                if (window.mainMenu) {
+                    window.mainMenu.testGameTransition();
+                } else {
+                    // Fallback test
+                    testMenuFallback();
+                }
+            }
+
+            // Fallback test function
+            function testMenuFallback() {
+                const mainMenu = document.getElementById('mainMenu');
+                const gameContainer = document.getElementById('gameContainer');
+                
+                if (mainMenu && gameContainer) {
+                    mainMenu.style.display = 'none';
+                    gameContainer.style.display = 'flex';
+                }
+            }
+
+            // Check if elements exist
+            document.addEventListener('DOMContentLoaded', function() {
+                const elements = ['mainMenu', 'gameContainer', 'startButton', 'exitButton'];
+                let missingElements = [];
+                
+                elements.forEach(id => {
+                    if (!document.getElementById(id)) {
+                        missingElements.push(id);
+                    }
+                });
+                
+
+                // Add fallback click handlers
+                const startButton = document.getElementById('startButton');
+                const exitButton = document.getElementById('exitButton');
+                
+                if (startButton) {
+                    startButton.addEventListener('click', function() {
+                        testMenuFallback();
+                    });
+                }
+            });
+
+        </script>
+
+        <script type="module" src="js/main.js"></script>
     </body>
 </html> 
