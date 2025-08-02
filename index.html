@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monster Fighter RPG Game</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="game-container">
+            <!-- Title Banner -->
+            <header class="title-banner">
+                <h1>Battlefit</h1>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Game Canvas (Left Side) -->
+                <section class="game-canvas-container">
+                    <div class="game-canvas">
+                        <div id="pose-display" class="pose-display">
+                            <div class="pose-text">No Pose Detected</div>
+                            <div class="confidence-text">0% Confidence</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Sidebar -->
+                <aside class="right-sidebar">
+                    <!-- Webcam Panel (Top Right) -->
+                    <div class="webcam-panel">
+                        <h2>Webcam - Image Recognition</h2>
+                        <div class="webcam-feed">
+                            <div id="webcam-container"></div>
+                            <div id="label-container"></div>
+                        </div>
+                    </div>
+
+                    <!-- Fitness PAL Panel (Bottom Right) -->
+                    <div class="fitness-pal-panel">
+                        <h2>Fitness PAL</h2>
+                        <div class="pal-content">
+                            🤖 AI Trainer<br>
+                            <small>Gemini AI assistant will be embedded here</small>
+                        </div>
+                    </div>
+                </aside>
+            </main>
+
+        </div>
+
+        <!-- TensorFlow.js and Teachable Machine dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+        
+        <script src="js/main.js"></script>
+    </body>
+</html> 
